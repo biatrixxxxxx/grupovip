@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso Exclusivo ao Grupo VIP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #121212;
+            --primary-color: #E60073; /* Um rosa vibrante */
+            --text-color: #FFFFFF;
+            --card-color: #1E1E1E;
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        section {
+            padding: 40px 20px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background-color: var(--bg-color);
+            padding: 40px 20px 20px;
+        }
+
+        .main-headline {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--text-color);
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            margin: 15px 0;
+            opacity: 0.9;
+        }
+
+        .hero-image {
+            margin: 20px 0;
+            border: 2px solid var(--primary-color);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary-color), #FF0055);
+            color: var(--text-color);
+            padding: 18px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(230, 0, 115, 0.4);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        .price {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        /* --- Content Intro & Gallery --- */
+        .content-intro h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .content-intro p {
+            max-width: 600px;
+            margin: 0 auto 25px auto;
+            line-height: 1.6;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        /* --- How it Works --- */
+        .how-it-works {
+            background-color: var(--card-color);
+        }
+        .how-it-works h2 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+        }
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .step {
+            background-color: var(--bg-color);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+            text-align: left;
+        }
+        .step span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            font-size: 1.5rem;
+            font-weight: 900;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .step h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        /* --- Security Section --- */
+        .security h2 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+        .feature-item {
+            padding: 20px;
+        }
+        .feature-item svg {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .feature-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        .feature-item p {
+            opacity: 0.8;
+        }
+
+        /* --- Final CTA --- */
+        .final-cta {
+            background-color: var(--card-color);
+            border-top: 2px solid var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+        .final-cta h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .final-offer {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+        .price-box {
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 1px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+        .price-box p {
+            margin: 0;
+            line-height: 1.3;
+        }
+        .main-price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary-color);
+        }
+        .final-cta small {
+            display: block;
+            margin-top: 15px;
+            opacity: 0.8;
+        }
+
+        .pulse {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(230, 0, 115, 0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 6px 25px rgba(230, 0, 115, 0.6);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(230, 0, 115, 0.4);
+            }
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #000;
+            padding: 20px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        /* Media Query para telas maiores (desktops) */
+        @media (min-width: 768px) {
+            section {
+                padding: 60px 40px;
+            }
+            .main-headline {
+                font-size: 3rem;
+            }
+            .hero-content {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+            .steps {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .step {
+                width: 30%;
+            }
+            .features {
+                grid-template-columns: 1fr 1fr;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+            .gallery {
+                max-width: 800px;
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="main-headline">ACESSO LIBERADO AO GRUPO VIP</h1>
+            <p class="subtitle">O conteúdo mais exclusivo que você já viu. Centenas de fotos e vídeos esperando por você.</p>
+            <img src="imagem1.jpg" alt="Amostra do conteúdo exclusivo do Grupo VIP" class="hero-image">
+            <a href="https://go.tribopay.com.br/9bphewugrc" class="cta-button">QUERO ACESSO IMEDIATO</a>
+            <p class="price">Acesso vitalício por apenas R$ 24,90</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="content-intro">
+            <h2>O Que Você Vai Encontrar?</h2>
+            <p>Prepare-se para um arsenal de conteúdo. São mais de <strong>500 arquivos</strong> entre fotos e vídeos, com atualizações frequentes. Todo o material que você deseja, sem enrolação, direto ao ponto.</p>
+            <div class="gallery">
+                <img src="imagem2.jpg" alt="Conteúdo exclusivo 2">
+                <img src="imagem3.jpg" alt="Conteúdo exclusivo 3">
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <h2>Como Funciona o Acesso?</h2>
+            <p>É mais simples do que você imagina. O acesso é <strong>imediato e 100% automático!</strong></p>
+            <div class="steps">
+                <div class="step">
+                    <span>1</span>
+                    <h3>Clique e Compre</h3>
+                    <p>Clique no botão de compra e escolha sua forma de pagamento preferida.</p>
+                </div>
+                <div class="step">
+                    <span>2</span>
+                    <h3>Pague com Segurança</h3>
+                    <p>Seu pagamento é processado pela <strong>TriboPay</strong>, uma das plataformas mais seguras do Brasil.</p>
+                </div>
+                <div class="step">
+                    <span>3</span>
+                    <h3>Receba no seu E-mail</h3>
+                    <p>Assim que o pagamento for aprovado, o link de acesso ao grupo é enviado <strong>instantaneamente</strong> para o seu e-mail.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="security">
+            <h2>Sua Compra 100% Segura e Discreta</h2>
+            <div class="features">
+                <div class="feature-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.027 8 1.027c-.531 0-1.552.263-2.662.563z"/>
+                        <path d="M11.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM5.354 6.354l-.708.708-2.5-2.5.708-.708 2.5 2.5z"/>
+                        <path d="M8 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                    </svg>
+                    <h3>Compra Segura</h3>
+                    <p>Plataforma TriboPay com criptografia de ponta. Seus dados estão protegidos.</p>
+                </div>
+                <div class="feature-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-envelope-check" viewBox="0 0 16 16">
+                        <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v2.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2z"/>
+                        <path d="M8 8.414l7.146-4.286A.5.5 0 0 0 15 3.5V4l-7 4.2-7-4.2v.5a.5.5 0 0 0 .146.354L8 8.414zM16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0zm-1.993-1.679a.5.5 0 0 0-.686.172l-1.17 1.95-.547-.547a.5.5 0 0 0-.708.708l.75.75a.5.5 0 0 0 .707 0l1.5-2.5a.5.5 0 0 0-.172-.686z"/>
+                    </svg>
+                    <h3>Entrega Garantida</h3>
+                    <p>O acesso chega no seu e-mail na mesma hora. Sem espera, sem estresse.</p>
+                </div>
+                <div class="feature-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
+                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
+                        <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
+                    </svg>
+                    <h3>Pagamento Facilitado</h3>
+                    <p>Pague com PIX ou Cartão de Crédito. Você escolhe a melhor forma.</p>
+                </div>
+                <div class="feature-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z"/>
+                        <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829l.822.822zm-2.943 1.294l.822.822a3.5 3.5 0 0 0 4.474-4.474l-.823-.823a2.5 2.5 0 0 1-2.829 2.829l-.822-.822z"/>
+                        <path d="M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709z"/>
+                        <path d="M13.646 14.354l-12-12 .708-.708 12 12-.708.708z"/>
+                    </svg>
+                    <h3>Privacidade Total</h3>
+                    <p>A compra é 100% discreta e o acesso é só seu. Ninguém saberá da sua compra.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <h2>Pronto Para Ter Acesso a Tudo Isso?</h2>
+            <p class="final-offer">Deixe de lado os conteúdos repetidos e venha para onde a exclusividade acontece de verdade.</p>
+            <div class="price-box">
+                <p>Acesso Vitalício por</p>
+                <p class="main-price">R$ 24,90</p>
+                <p>(Pagamento Único)</p>
+            </div>
+            <a href="https://go.tribopay.com.br/9bphewugrc" class="cta-button pulse">QUERO COMPRAR AGORA!</a>
+            <small>Vagas no grupo podem ser limitadas.</small>
+        </section>
+    </main>
+
+    <footer>
+        <p>Compra segura processada por TriboPay. Acesso privado e 100% discreto.</p>
+        <p>&copy; 2025 - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
